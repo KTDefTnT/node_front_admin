@@ -1,0 +1,15 @@
+.el-menu {
+  text-align: left;
+  .el-submenu__title {
+    text-align: left;
+  }
+  .el-menu-item {
+    padding-left: 50px !important;
+    a {
+      color: #fff;
+      &.router-link-active {
+        color: #ffd04b;
+      }
+    }
+  }
+}
