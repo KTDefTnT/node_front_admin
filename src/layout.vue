@@ -1,8 +1,11 @@
 <template>
   <div class="layout">
-    <el-menu class="layout-left" :default-active="activeIndex" background-color="#545c64"
+    <el-menu
+      class="layout-left"
+      :default-active="activeIndex"
+      background-color="#545c64"
       text-color="#fff"
-      active-text-color="#ffd04b">
+      active-text-color="#a61b29">
       <el-submenu v-for="item in menus" :key="item.router" index="1">
         <template slot="title">
           <i class="el-icon-menu"></i>

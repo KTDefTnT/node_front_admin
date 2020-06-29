@@ -2,7 +2,7 @@ import { RouteConfig } from 'vue-router'
 const routes: Array<RouteConfig> = [{
   path: '/',
   name: 'admin',
-  meta: { requiresAuth: true },
+  meta: { requiresAuth: false },
   component: () => import('../main.vue'),
   children: [
     {

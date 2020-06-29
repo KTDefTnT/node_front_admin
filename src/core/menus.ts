@@ -12,15 +12,6 @@ const Menus: Array<object> = [
         name: 'admin.about'
       }
     ]
-  }, {
-    desc: '不知道的',
-    children: [
-      {
-        desc: '登录咯',
-        router: '/login',
-        name: 'login'
-      }
-    ]
   }
 ];
 
