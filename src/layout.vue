@@ -38,7 +38,7 @@ export default class HelloWorld extends Vue {
 .layout {
   display: flex;
   flex-direction: row;
-  height: calc(100vh - 60px);
+  min-height: calc(100vh - 60px);
   .layout-left {
     flex-basis: 220px;
   }

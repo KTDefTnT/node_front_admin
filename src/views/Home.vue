@@ -1,17 +1,28 @@
 <template>
   <div class="home">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <div>
+      <mavon-editor 
+        v-model="content" 
+        ref="md" 
+        @change="change" 
+        style="min-height: 600px"
+        :ishljs="true"
+      />
+
+      <!-- <button @click="submit">提交</button> -->
+  </div>
   </div>
 </template>
 
-<script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+<script lang="ts">
+import { Component, Vue } from 'vue-property-decorator';
 
-export default {
-  name: 'Home',
-  components: {
-    HelloWorld
+@Component
+export default class Home extends Vue {
+  content = ''
+
+  change (val, html) {
+    console.log('change', html);
   }
 }
 </script>
