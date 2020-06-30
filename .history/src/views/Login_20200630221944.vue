@@ -45,6 +45,9 @@ export default class Login extends Vue {
       }
     });
   }
+  created () {
+    console.log(this);
+  }
 }
 </script>
 <style lang="scss">

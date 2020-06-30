@@ -3,19 +3,19 @@
     <Header />
     <div class="login-content">
       <div class="title">登录</div>
-      <el-form :model="form" ref="form">
-        <el-form-item prop="username" :rules="[{ required: true, message: '请输入账户名称', trigger: 'blur' }]">
-          <el-input v-model="form.username" placeholder="请输入账户名称">
+      <el-form :model="form">
+        <el-form-item  prop="userName">
+          <el-input v-model="form.userName" placeholder="请输入账户名称">
             <i slot="prefix" class="icon iconfont icon-yonghu"></i>
           </el-input>
         </el-form-item>
-        <el-form-item prop="password" :rules="[{ required: true, message: '请输入密码' }]">
+        <el-form-item prop="password">
           <el-input type="password" v-model="form.password" placeholder="请输入密码">
             <i slot="prefix" class="icon iconfont icon-mima"></i>
           </el-input>
         </el-form-item>
       </el-form>
-      <el-button class="login-btn" type="primary" @click="handleLogin">登录</el-button>
+      <el-button class="login-btn" type="primary">登录</el-button>
       <div class="others">第三方登录</div>
     </div>
   </div>
@@ -24,7 +24,6 @@
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
 import Header from '../components/Header.vue';
-import { ResponseData } from 'core/types';
 
 @Component({
   components: {
@@ -32,18 +31,13 @@ import { ResponseData } from 'core/types';
   }
 })
 export default class Login extends Vue {
-  private form: object = {
+  form = {
     username: '',
     password: ''
   };
 
-  private handleLogin () {
-    this.$refs.form.validate(async (valid: boolean | string) => {
-      if (valid) {
-        const data: ResponseData = await this.$api.user.register(this.form);
-        console.log('data', data);
-      }
-    });
+  created () {
+    console.log(this.$api);
   }
 }
 </script>

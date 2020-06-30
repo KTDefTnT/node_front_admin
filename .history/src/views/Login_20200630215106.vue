@@ -24,7 +24,6 @@
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
 import Header from '../components/Header.vue';
-import { ResponseData } from 'core/types';
 
 @Component({
   components: {
@@ -32,18 +31,23 @@ import { ResponseData } from 'core/types';
   }
 })
 export default class Login extends Vue {
-  private form: object = {
+  form = {
     username: '',
     password: ''
   };
 
-  private handleLogin () {
-    this.$refs.form.validate(async (valid: boolean | string) => {
+  handleLogin () {
+    console.log('this.$refs.form.validate(', this.$refs.form);
+    this.$refs.form.validate((valid: boolean | string) => {
       if (valid) {
-        const data: ResponseData = await this.$api.user.register(this.form);
-        console.log('data', data);
+        this.$api.user.register(this.form).then(res => {
+         console.log(res);
+       })
       }
     });
+  }
+  created () {
+    console.log(this);
   }
 }
 </script>

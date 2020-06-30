@@ -3,7 +3,7 @@ const path = require('path');
 
 module.exports = {
   devServer: {
-    port: 9050,
+    port: port,
     open: true,
     index: 'portal.html',
     overlay: {
@@ -17,7 +17,7 @@ module.exports = {
         target: `http://192.168.200.115:3000`,
         changeOrigin: true,
         pathRewrite: {
-          "^/api": ""
+          "^/api": "/"
         }
       },
     }
