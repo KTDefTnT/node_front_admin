@@ -21,7 +21,7 @@ import { Component, Vue } from 'vue-property-decorator';
 export default class Home extends Vue {
   content = ''
 
-  change (val: string, html: string) {
+  change (val: string, html) {
     console.log('change', html);
   }
 }
