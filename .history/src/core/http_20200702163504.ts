@@ -1,5 +1,4 @@
 import axios, { AxiosInstance, AxiosResponse, AxiosRequestConfig } from 'axios';
-import Vue from 'vue';
 import { Notification } from 'element-ui';
 import qs from 'qs';
 
@@ -50,18 +49,6 @@ service.interceptors.response.use((response: AxiosResponse) => {
       duration: 2000
     });
   }
-  
-  if (response.status === 200 && response.data.type === 'logout') {
-    Notification({
-      title: '提示',
-      message: response.data.message,
-      type: 'warning',
-      duration: 2000
-    });
-    window.sessionStorage.removeItem('isLogin');
-    // Vue.prototype.$router.push({ name: 'login' });
-  }
-
   return response;
 }, (error: Error) => {
   Notification({

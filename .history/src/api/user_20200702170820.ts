@@ -21,10 +21,5 @@ export default {
     return http.post('/userList', data).then((resp: AxiosResponse) => {
       return resp.data;
     });
-  },
-  deleteUser: (data: object) => {
-    return http.post('/deleteUser', data).then((resp: AxiosResponse) => {
-      return resp.data;
-    });
   }
 };

@@ -8,8 +8,8 @@ const Menus: Array<object> = [
         name: 'admin.home'
       }, {
         desc: '用户管理',
-        router: '/userList',
-        name: 'admin.userList'
+        router: '/about',
+        name: 'admin.about'
       }
     ]
   }

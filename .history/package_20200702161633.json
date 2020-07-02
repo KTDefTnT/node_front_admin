@@ -13,14 +13,13 @@
     "core-js": "^3.6.5",
     "element-ui": "^2.4.5",
     "mavon-editor": "^2.9.0",
-    "moment": "^2.27.0",
     "qs": "^6.9.4",
     "ts-loader": "^7.0.5",
     "vue": "^2.6.11",
     "vue-axios": "^2.1.5",
     "vue-class-component": "^7.2.3",
     "vue-property-decorator": "^8.4.2",
-    "vue-router": "^3.2.0",
+    "vue-router": "^3.0.7",
     "vuex": "^3.4.0"
   },
   "devDependencies": {

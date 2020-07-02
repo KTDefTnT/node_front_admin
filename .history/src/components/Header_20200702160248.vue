@@ -1,8 +1,7 @@
 <template>
   <div class="header-contianer">
     <div class="header-content">
-      <!-- v-if="isLogin" -->
-      <div class="action-btn pull-right" >
+      <div class="action-btn pull-right" v-if="isLogin">
         <el-button size="medium" type="primary" @click="logout">退出</el-button>
       </div>
       <!-- <div class="action-btn pull-right" v-else>
@@ -29,7 +28,6 @@
       const data: ResponseData = await this.$api.user.logout();
       if (data.type === 'success') {
         window.sessionStorage.removeItem('isLogin');
-        this.$router.push({ name: 'login' });
       }
     }
   }

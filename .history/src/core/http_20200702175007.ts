@@ -59,7 +59,7 @@ service.interceptors.response.use((response: AxiosResponse) => {
       duration: 2000
     });
     window.sessionStorage.removeItem('isLogin');
-    // Vue.prototype.$router.push({ name: 'login' });
+    Vue.prototype.$router.push({ name: 'login' });
   }
 
   return response;

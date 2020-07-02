@@ -39,8 +39,8 @@ import { ResponseData } from 'core/types';
 })
 export default class Login extends Vue {
   private form: object = {
-    email: '123456@qq.com',
-    password: '123456'
+    email: '',
+    password: ''
   }
 
   /**
@@ -54,25 +54,12 @@ export default class Login extends Vue {
     this.$refs.form.validate(async (valid: boolean | string) => {
       if (valid) {
         // console.log('form', this.form);
-        const data: ResponseData = await this.$api.user.login({...this.form});
+        const data: ResponseData = await this.$api.user.register({...this.form});
         console.log('data', data);
-        if (data.type === 'success') {
-          window.sessionStorage.setItem('isLogin', 'login');
-          this.$router.push({ name: 'admin.home' });
-        } else {
-          this.$alert(data.message, '提示', {
-            type: data.type
-          });
-        }
       }
     });
   }
-
-  created () {
-    if (window.sessionStorage.getItem('isLogin') === 'login') {
-      this.$router.push({ name: 'admin.home' });
-    }
-  }
+  
 }
 </script>
 <style lang="scss">

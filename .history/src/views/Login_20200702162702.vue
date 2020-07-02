@@ -58,7 +58,7 @@ export default class Login extends Vue {
         console.log('data', data);
         if (data.type === 'success') {
           window.sessionStorage.setItem('isLogin', 'login');
-          this.$router.push({ name: 'admin.home' });
+          this.$router.push({ path: '/home' });
         } else {
           this.$alert(data.message, '提示', {
             type: data.type

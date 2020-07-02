@@ -67,12 +67,6 @@ export default class Login extends Vue {
       }
     });
   }
-
-  created () {
-    if (window.sessionStorage.getItem('isLogin') === 'login') {
-      this.$router.push({ name: 'admin.home' });
-    }
-  }
 }
 </script>
 <style lang="scss">

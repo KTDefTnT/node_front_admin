@@ -39,8 +39,8 @@ import { ResponseData } from 'core/types';
 })
 export default class Login extends Vue {
   private form: object = {
-    email: '123456@qq.com',
-    password: '123456'
+    email: '',
+    password: ''
   }
 
   /**
@@ -66,12 +66,6 @@ export default class Login extends Vue {
         }
       }
     });
-  }
-
-  created () {
-    if (window.sessionStorage.getItem('isLogin') === 'login') {
-      this.$router.push({ name: 'admin.home' });
-    }
   }
 }
 </script>

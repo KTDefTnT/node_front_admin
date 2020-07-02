@@ -1,5 +1,4 @@
 import axios, { AxiosInstance, AxiosResponse, AxiosRequestConfig } from 'axios';
-import Vue from 'vue';
 import { Notification } from 'element-ui';
 import qs from 'qs';
 
@@ -41,27 +40,7 @@ service.interceptors.response.use((response: AxiosResponse) => {
     });
     return;
   }
-  // 请求成功，弹框
-  if (response.status === 200 && response.data.show) {
-    Notification({
-      title: '提示',
-      message: response.data.message,
-      type: response.data.type,
-      duration: 2000
-    });
-  }
-  
-  if (response.status === 200 && response.data.type === 'logout') {
-    Notification({
-      title: '提示',
-      message: response.data.message,
-      type: 'warning',
-      duration: 2000
-    });
-    window.sessionStorage.removeItem('isLogin');
-    // Vue.prototype.$router.push({ name: 'login' });
-  }
-
+  console.log('response', response);
   return response;
 }, (error: Error) => {
   Notification({

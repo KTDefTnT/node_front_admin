@@ -55,11 +55,10 @@ service.interceptors.response.use((response: AxiosResponse) => {
     Notification({
       title: '提示',
       message: response.data.message,
-      type: 'warning',
+      type: response.data.type,
       duration: 2000
     });
-    window.sessionStorage.removeItem('isLogin');
-    // Vue.prototype.$router.push({ name: 'login' });
+    Vue.$router.push({ name: 'login' });
   }
 
   return response;

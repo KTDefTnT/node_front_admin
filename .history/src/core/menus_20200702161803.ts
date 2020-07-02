@@ -4,12 +4,12 @@ const Menus: Array<object> = [
     children: [
       {
         desc: '首页',
-        router: '/home',
+        router: '/admin/home',
         name: 'admin.home'
       }, {
         desc: '用户管理',
-        router: '/userList',
-        name: 'admin.userList'
+        router: '/admin/about',
+        name: 'admin.about'
       }
     ]
   }

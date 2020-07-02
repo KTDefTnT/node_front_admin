@@ -10,7 +10,6 @@ const routes: Array<RouteConfig> = [{
   name: 'admin',
   meta: { requiresAuth: true },
   component: () => import('../main.vue'),
-  redirect: { name: "admin.home" },
   children: [
     {
       path: '/home',
@@ -18,9 +17,9 @@ const routes: Array<RouteConfig> = [{
       component: () => import('../views/Home.vue')
     },
     {
-      path: '/userList',
-      name: 'admin.userList',
-      component: () => import('../views/UserList.vue')
+      path: '/about',
+      name: 'admin.about',
+      component: () => import('../views/About.vue')
     }
   ]
 }, {

@@ -1,21 +1,18 @@
 <template>
   <div class="header-contianer">
     <div class="header-content">
-      <!-- v-if="isLogin" -->
-      <div class="action-btn pull-right" >
-        <el-button size="medium" type="primary" @click="logout">退出</el-button>
-      </div>
-      <!-- <div class="action-btn pull-right" v-else>
+      这是一个header啦~~~
+      <div class="action-btn" v-if="isLogin"></div>
+      <div class="action-btn" v-else>
         <el-button size="medium" type="primary">登录</el-button>
         <el-button size="medium" class="register">注册</el-button>
-      </div> -->
+      </div>
     </div>
   </div>
 </template>
 
 <script lang="ts">
   import { Component, Prop, Vue } from 'vue-property-decorator';
-  import { ResponseData } from 'core/types';
 
   @Component
   export default class Header extends Vue {
@@ -23,14 +20,6 @@
 
     get isLogin () {
       return window.sessionStorage.getItem('isLogin') === 'login';
-    }
-
-    private async logout () {
-      const data: ResponseData = await this.$api.user.logout();
-      if (data.type === 'success') {
-        window.sessionStorage.removeItem('isLogin');
-        this.$router.push({ name: 'login' });
-      }
     }
   }
 </script>
@@ -43,12 +32,8 @@
     background: #545c64;
     .header-content {
       width: 1200px;
-      height: 60px;
       margin: 0 auto;
       color: #fff;
-      .action-btn {
-
-      }
     }
   }
 </style>

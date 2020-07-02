@@ -21,8 +21,8 @@
       </el-form-item>
     </el-form>
     <div slot="footer" class="text-center">
-      <el-button size="medium" @click="handleClose">取 消</el-button>
-      <el-button size="medium" type="primary" @click="sure">确 定</el-button>
+      <el-button @click="handleClose">取 消</el-button>
+      <el-button type="primary" @click="sure">确 定</el-button>
     </div>
   </el-dialog>
 </template>
@@ -111,7 +111,6 @@ export default class Register extends Vue {
 
   public show () {
     this.dialogVisible = true;
-    this.$refs.form.resetFields();
   }
 }
 </script>

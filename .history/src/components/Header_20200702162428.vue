@@ -1,8 +1,7 @@
 <template>
   <div class="header-contianer">
     <div class="header-content">
-      <!-- v-if="isLogin" -->
-      <div class="action-btn pull-right" >
+      <div class="action-btn pull-right" v-if="isLogin">
         <el-button size="medium" type="primary" @click="logout">退出</el-button>
       </div>
       <!-- <div class="action-btn pull-right" v-else>

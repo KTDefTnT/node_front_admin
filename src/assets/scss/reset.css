@@ -30,6 +30,14 @@ a {
   text-align: right;
 }
 
+.pull-right {
+  float: right;
+}
+
+.pull-left {
+  float: left;
+}
+
 .dialog-form {
   padding: 0 50px;
 }

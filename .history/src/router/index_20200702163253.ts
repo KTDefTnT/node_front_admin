@@ -20,6 +20,7 @@ function initRouter (Vue: any) {
     if (to.matched.some(record => record.meta.requiresAuth)) {
       // this route requires auth, check if logged in
       // if not, redirect to login page.
+      console.log(isLogin, window.sessionStorage.getItem('isLogin'));
       if (!isLogin || isLogin !== 'login') {
         next({ name: 'login' });
       } else {

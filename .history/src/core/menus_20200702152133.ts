@@ -1,15 +1,15 @@
 const Menus: Array<object> = [
   {
-    desc: '客户管理',
+    desc: '基础管理',
     children: [
       {
         desc: '首页',
-        router: '/home',
+        router: '/admin/home',
         name: 'admin.home'
       }, {
-        desc: '用户管理',
-        router: '/userList',
-        name: 'admin.userList'
+        desc: 'about',
+        router: '/admin/about',
+        name: 'admin.about'
       }
     ]
   }

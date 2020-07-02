@@ -2,6 +2,7 @@
 import routes from './routes.config'
 import VueRouter, { Route } from 'vue-router'
 
+const isLogin = window.sessionStorage.getItem('isLogin') || false;
 const router: any = {
   instance: ''
 };
@@ -16,10 +17,10 @@ function initRouter (Vue: any) {
   });
 
   router.instance.beforeEach((to: Route, from: Route, next: Function) => {
-    const isLogin = window.sessionStorage.getItem('isLogin') || false;
     if (to.matched.some(record => record.meta.requiresAuth)) {
       // this route requires auth, check if logged in
       // if not, redirect to login page.
+      console.log();
       if (!isLogin || isLogin !== 'login') {
         next({ name: 'login' });
       } else {

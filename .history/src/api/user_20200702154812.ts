@@ -16,15 +16,5 @@ export default {
     return http.post('/logout', data).then((resp: AxiosResponse) => {
       return resp.data;
     });
-  },
-  getUserList: (data: object) => {
-    return http.post('/userList', data).then((resp: AxiosResponse) => {
-      return resp.data;
-    });
-  },
-  deleteUser: (data: object) => {
-    return http.post('/deleteUser', data).then((resp: AxiosResponse) => {
-      return resp.data;
-    });
   }
 };
