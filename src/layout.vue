@@ -2,16 +2,13 @@
   <div class="layout">
     <el-menu
       class="layout-left"
-      :default-active="activeIndex"
-      background-color="#545c64"
-      text-color="#fff"
-      active-text-color="#a61b29">
-      <el-submenu v-for="item in menus" :key="item.router" index="1">
+      :default-active="activeIndex">
+      <el-submenu v-for="(item, index) in menus" :key="item.router" :index="index + ''">
         <template slot="title">
           <i class="el-icon-menu"></i>
           {{ item.desc }}
         </template>
-        <el-menu-item v-for="subItem in item.children" :key="subItem.router" index="index">
+        <el-menu-item v-for="(subItem, subIndex) in item.children" :key="subItem.router" :index="`${index + ''}-${subIndex}`">
           <router-link :to="subItem.router">{{ subItem.desc }}</router-link>
         </el-menu-item>
       </el-submenu>
@@ -45,6 +42,7 @@ export default class HelloWorld extends Vue {
   
   .layout-right {
     flex: 1;
+    padding: 20px;
   }
 }
   

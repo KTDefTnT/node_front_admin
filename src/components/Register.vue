@@ -96,9 +96,6 @@ export default class Register extends Vue {
       if (valid) {
         const data: ResponseData = await this.$api.user.register({...this.form});
         if (data.type === 'success') {
-          this.$alert( data.message, '提示', {
-            type: 'warning'
-          });
           this.handleClose();
         } else {
           this.$alert( data.message, '提示', {

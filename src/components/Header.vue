@@ -1,8 +1,7 @@
 <template>
   <div class="header-contianer">
     <div class="header-content">
-      <!-- v-if="isLogin" -->
-      <div class="action-btn pull-right" >
+      <div v-if="isLogin"  class="action-btn pull-right" >
         <el-button size="medium" type="primary" @click="logout">退出</el-button>
       </div>
       <!-- <div class="action-btn pull-right" v-else>
@@ -36,11 +35,12 @@
 </script>
 
 <style lang="scss" scoped>
+  @import '../assets/scss/variable';
   .header-contianer {
     width: 100%;
     height: 60px;
     line-height: 60px;
-    background: #545c64;
+    background: linear-gradient(to right, $info-gradient, $background-gradient-light 80%, $primary-gradient-light, $primary-gradient);
     .header-content {
       width: 1200px;
       height: 60px;

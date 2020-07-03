@@ -1,3 +1,4 @@
+@import './variable.scss';
 * {
   box-sizing: border-box;
   font-family: "helvetica neue", tahoma, Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑",
@@ -37,6 +38,12 @@ a {
 .pull-left {
   float: left;
 }
+
 .dialog-form {
   padding: 0 50px;
+}
+
+.search-contianer {
+  border-bottom: 1px solid $border-color;
+  margin-bottom: 10px;
 }
